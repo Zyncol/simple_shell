@@ -112,12 +112,18 @@ typedef struct builtin
 
 
 /* toem_shloop.c */
+void find_command(info_t *info);
+void fork_command(info_t *info);
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
 /* toem_parser.c */
+size_t custom_strlen(const char *str);
+int begins_with(const char *str, const char *prefix);
+char *custom_strcat(char *dest, const char *src);
+
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, char *);
@@ -226,6 +232,11 @@ list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
 /* toem_vars.c */
+list_t *node_head(list_t *head, const char *str, char delim);
+char *custom_strchr(const char *s, int c);
+char *custom_strdup(const char *s);
+int custom_strcmp(const char *s1, const char *s2);
+int substitute_string(char **old, char *new);
 int is_chain(info_t *, char *, size_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);

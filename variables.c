@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * char_is_chain - Function that test if current char in buffer is
