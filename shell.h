@@ -194,6 +194,10 @@ int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
 /* toem_getinfo.c */
+int substitute_alias(info_t *info);
+int substitute_vars(info_t *info);
+void field_freed(char **fields);
+void buf_freed(void **buf);
 void clear_info(info_t *);
 void set_info(info_t *, char **);
 void free_info(info_t *, int);
@@ -216,6 +220,11 @@ int write_history(info_t *info);
 int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
 int renumber_history(info_t *info);
+
+/*main.c*/
+void e_stdout(const char *str);
+void e_stdout_char(char c);
+void env_list_fill(info_t *info);
 
 /* toem_lists.c */
 list_t *add_node(list_t **, const char *, int);
