@@ -89,4 +89,4 @@ int env_list_fill(info_t *info)
 		tail_list_append(&node, environ[i], 0);
 	info->env = node;
 	return (0);
-}	
+}
